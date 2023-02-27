@@ -1,0 +1,11 @@
+<p>incident works!</p>
+<form class="example-form" [formGroup]="profileForm" (ngSubmit)="formsubmit($event)">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Number</mat-label>
+        <app-custom-form-field-control
+        formControlName="firstName"
+        ></app-custom-form-field-control>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Submit</button>
+</form>
