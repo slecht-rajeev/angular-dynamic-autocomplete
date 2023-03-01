@@ -22,3 +22,12 @@
   mat-autocomplete {
     width: 100%
   }
+
+  .mat-options {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .mat-options > p{
+    text-align: center;
+  }

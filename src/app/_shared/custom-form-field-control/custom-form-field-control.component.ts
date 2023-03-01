@@ -195,10 +195,9 @@ export class CustomFormFieldControlComponent implements OnInit, ControlValueAcce
     this.disabled = isDisabled;
   }
 
-  _handleInput(control: AbstractControl): void {
-    // this.autoFocusNext(control);
-    this.onChange(this.value);
-  }
+  // _handleInput(control: AbstractControl): void {
+  //   this.onChange(this.value);
+  // }
 
   ngOnInit(): void {
     
@@ -221,7 +220,7 @@ export class CustomFormFieldControlComponent implements OnInit, ControlValueAcce
         tap(() => {
           this.filteredOptions = [];
         }),
-        switchMap(value => this.customerService.getList()
+        switchMap(value => this.customerService.getList(this.parts.controls.userId.value)
           .pipe(
             finalize(() => {
               
@@ -230,7 +229,6 @@ export class CustomFormFieldControlComponent implements OnInit, ControlValueAcce
         )
       )
       .subscribe((data: any) => {
-        console.log(data.results)
         if (data.results === undefined) {
           // this.errorMsg = data['Error'];
           this.filteredOptions = [];

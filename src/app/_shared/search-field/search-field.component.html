@@ -1,0 +1,26 @@
+<ng-container [formGroup]="form" >
+    <input class="userid-input" 
+    matInput
+    #input
+          formControlName="userid"
+          [matAutocomplete]="auto"
+          [placeholder]="placeholder" />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option value="one">One</mat-option>
+      <mat-option value="two">Two</mat-option>
+      <mat-option value="three">Three</mat-option>
+      <mat-option value="four">Four</mat-option>
+      <mat-option value="five">Five</mat-option>
+    </mat-autocomplete>
+
+</ng-container>
+
+<!-- 
+    <mat-option *ngFor="let option of filteredOptions" [value]="option.name.first">
+        <div class="mat-options">
+          <img [src]="option.picture.thumbnail" />
+          <p>
+            {{option.name.first}}
+          </p>
+        </div>
+      </mat-option> -->

@@ -1,11 +1,30 @@
-<p>incident works!</p>
-<form class="example-form" [formGroup]="profileForm" (ngSubmit)="formsubmit($event)">
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Number</mat-label>
-        <app-custom-form-field-control
-        formControlName="firstName"
-        ></app-custom-form-field-control>
-    </mat-form-field>
+<form class="example-form" style="padding: 15px;"
+[formGroup]="profileForm" 
+(ngSubmit)="formsubmit($event)">
+<!-- <mat-form-field class="example-full-width" 
+    appearance="fill">
+    <mat-label>Number</mat-label>
+    <app-custom-form-field-control
+    formControlName="username"
+    ></app-custom-form-field-control>
+</mat-form-field> -->
 
-    <button mat-raised-button color="primary">Submit</button>
+    
+<mat-form-field appearance="outline">
+    <mat-label>Search User 1</mat-label>
+    <input type="text" matInput />
+</mat-form-field>
+<br />
+<mat-form-field >
+    <mat-label>Search User</mat-label>
+    <app-search-field
+    formControlName="username"
+    [required]="true"
+    ></app-search-field>
+</mat-form-field>
+
+<br />
+    <button mat-raised-button color="primary">
+        Submit
+    </button>
 </form>

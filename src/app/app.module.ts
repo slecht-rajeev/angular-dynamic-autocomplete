@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { fakeBackendProvider } from './_shared/fakebackend';
  
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatAutocompleteModule
   ],
-  providers: [],
+  providers: [
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

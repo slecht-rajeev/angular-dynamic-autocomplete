@@ -11,13 +11,17 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+// import { MatButtonModule } from '@angular/material/fo';
 import { CustomFormFieldControlComponent } from '../_shared/custom-form-field-control/custom-form-field-control.component';
+import { SearchFieldComponent } from '../_shared/search-field/search-field.component';
 
 
 @NgModule({
   declarations: [
     IncidentComponent,
-    CustomFormFieldControlComponent
+    CustomFormFieldControlComponent,
+    SearchFieldComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +32,8 @@ import { CustomFormFieldControlComponent } from '../_shared/custom-form-field-co
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    MatDividerModule,
+    MatFormFieldModule
   ]
 })
 export class IncidentModule { }

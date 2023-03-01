@@ -17,25 +17,21 @@
   </ng-container> -->
 
   <ng-container 
-     [formGroup]="parts"
-     (focusin)="onFocusIn($event)"
-     (focusout)="onFocusOut($event)">
+     [formGroup]="parts">
     <input class=""
           matInput
           formControlName="userId"
-          maxLength="3"
           aria-label="Area code"
-          (input)="_handleInput(parts.controls.userId)"
           [matAutocomplete]="auto"
           #userId>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions" [value]="option.name.first">
-        {{option.name.first}}
+        <div class="mat-options">
+          <img [src]="option.picture.thumbnail" />
+          <p>
+            {{option.name.first}}
+          </p>
+        </div>
       </mat-option>
     </mat-autocomplete>
-    <!-- <mat-select>
-      <mat-option *ngFor="let option of filteredOptions" [value]="option.name.first">
-        {{option.name.first}}
-      </mat-option>
-    </mat-select> -->
 </ng-container>

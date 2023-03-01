@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-incident',
@@ -12,7 +12,8 @@ export class IncidentComponent implements OnInit{
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      firstName: new FormControl(''),
+      username1: new FormControl(''),
+      username: new FormControl('', Validators.required),
     });
   }
 
@@ -20,7 +21,7 @@ export class IncidentComponent implements OnInit{
   formsubmit(event: any) {
     console.log(event);
 
-    console.log(this.profileForm.controls['firstname'].value);
+    console.log(this.profileForm.controls.username.value)
 
     // https://github.com/DMezhenskyi/angular-cdk-lessons/tree/master/src/app/advanced-search-control/custom-form-field-control
   }
